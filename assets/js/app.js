@@ -245,19 +245,6 @@
 
   function renderHome() {
     var grid = document.querySelector("[data-category-grid]");
-    var preview = document.querySelector("[data-home-preview]");
-    var heroCopy = document.querySelector("[data-hero-copy]");
-    if (heroCopy) {
-      heroCopy.textContent = t("hero_copy");
-    }
-    if (preview) {
-      var first = (state.catalog.categories || []).find(function (category) {
-        return category.coverImage;
-      });
-      preview.innerHTML = first && first.coverImage
-        ? '<img src="./' + escapeAttr(first.coverImage) + '" alt="HIGHTAC Helmet" draggable="false" data-protected-image>'
-        : "";
-    }
     if (!grid) {
       return;
     }
