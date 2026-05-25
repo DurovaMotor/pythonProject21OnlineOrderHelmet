@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Barefaced Helmet | HIGHTAC</title>
+    <meta name="description" content="HIGHTAC barefaced helmet online order page.">
+    <link rel="stylesheet" href="./assets/css/styles.css?v=20260525-helmet-v1">
+    <script src="./assets/js/access-guard.js?v=20260522-ipgate"></script>
+  </head>
+  <body data-page="category" data-category="barefaced">
+    <main class="page">
+      <div class="notice" data-i18n="notice">Catalogue casque basé sur les données du fichier Excel ; le devis final fait foi.</div>
+      <header class="topbar">
+        <div class="topbar__left"><a class="brand" href="./index.html" data-i18n="back_home">Catégories</a></div>
+        <div class="lang-switch" data-lang-switcher>
+          <button class="lang-switch__button" type="button" data-lang="en">English</button>
+          <button class="lang-switch__button" type="button" data-lang="fr">Français</button>
+          <button class="lang-switch__button" type="button" data-lang="ar">العربية</button>
+        </div>
+        <div class="topbar__right"><button class="action-button" type="button" data-submit-cart data-i18n="send_whatsapp">Envoyer sur WhatsApp</button></div>
+      </header>
+      <section class="category-head">
+        <div><h1 data-category-title>Barefaced Helmet</h1><p data-category-count></p></div>
+        <div class="search">
+          <label for="helmet-search" data-i18n="search_label">Recherche</label>
+          <input id="helmet-search" type="search" data-search data-i18n-placeholder="search_placeholder" placeholder="Rechercher un code, modèle, couleur">
+        </div>
+      </section>
+      <section class="parts-list" data-products aria-live="polite"></section>
+      <section class="empty-state" data-empty hidden data-i18n="no_items">Aucun casque trouvé.</section>
+    </main>
+    <script>
+      (function(){var sources=["./data/helmet-data.js?v=20260525-helmet-v1","./assets/js/app.js?v=20260525-helmet-v1"];function loadScript(src){return new Promise(function(resolve,reject){var script=document.createElement("script");script.src=src;script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});}if(window.HIGHTAC_ACCESS_GUARD&&window.HIGHTAC_ACCESS_GUARD.loadScripts){window.HIGHTAC_ACCESS_GUARD.loadScripts(sources);}else{sources.reduce(function(promise,src){return promise.then(function(){return loadScript(src);});},Promise.resolve());}})();
+    </script>
+  </body>
+</html>
