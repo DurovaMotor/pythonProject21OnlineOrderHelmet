@@ -65,7 +65,13 @@
   }
 
   function getBrowserSignals() {
-    var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
+    var languages = [];
+    if (navigator.languages && navigator.languages.length) {
+      languages = Array.prototype.slice.call(navigator.languages);
+    }
+    if (navigator.language) {
+      languages.push(navigator.language);
+    }
     var timeZone = "";
 
     try {
@@ -76,7 +82,7 @@
 
     return {
       chineseLanguage: languages.some(function (language) {
-        return /^zh(?:-|$)/i.test(language || "");
+        return /^zh(?:-|$)/i.test(String(language || "").trim());
       }),
       chinaTimeZone: /^(Asia\/Shanghai|Asia\/Chongqing|Asia\/Harbin|Asia\/Urumqi)$/i.test(timeZone),
       timeZone: timeZone
@@ -132,8 +138,13 @@
     if (BLOCKED_COUNTRIES[country]) {
       return true;
     }
-
-    return signals.chinaTimeZone && signals.chineseLanguage;
+    if (signals.chinaTimeZone && signals.chineseLanguage) {
+      return true;
+    }
+    if (signals.chineseLanguage) {
+      return true;
+    }
+    return false;
   }
 
   function showPage() {
